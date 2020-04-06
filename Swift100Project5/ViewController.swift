@@ -72,6 +72,21 @@ class ViewController: UITableViewController {
         
     }
     
+    // Checks if the word can be made
+    func isPossible(word: String) -> Bool {
+        return true
+    }
+
+    // Checks if the word is a duplicate
+    func isOriginal(word: String) -> Bool {
+        return true
+    }
+
+    // Check if the word is a valid english word
+    func isReal(word: String) -> Bool {
+        return true
+    }
+    
     func submit(_ answer: String) {
     }
     
