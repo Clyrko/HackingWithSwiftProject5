@@ -88,6 +88,27 @@ class ViewController: UITableViewController {
     }
     
     func submit(_ answer: String) {
+        
+        let lowerAnswer = answer.lowercased()
+        
+        if isPossible(word: lowerAnswer) {
+            
+            if isOriginal(word: lowerAnswer) {
+                
+                if isReal(word: lowerAnswer) {
+                    
+                    // If all 3 statements are true, insert word into array. Makes new word appear on top of list
+                    usedWords.insert(answer, at: 0)
+                    
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    tableView.insertRows(at: [indexPath], with: .automatic)
+                    
+                }
+                
+            }
+            
+        }
+        
     }
     
 }
