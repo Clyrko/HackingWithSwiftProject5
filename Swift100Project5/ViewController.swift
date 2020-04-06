@@ -42,7 +42,7 @@ class ViewController: UITableViewController {
         ac.addTextField()
         
         let submitAction = UIAlertAction(title: "Submit", style: .default) { [weak self, weak ac] action in
-            guard let answer = ac?.textFields[0].text else { return }
+            guard let answer = ac?.textFields?[0].text else { return }
             self?.submit(answer)
             
         }
@@ -70,6 +70,9 @@ class ViewController: UITableViewController {
         cell.textLabel?.text = usedWords[indexPath.row]
         return cell
         
+    }
+    
+    func submit(_ answer: String) {
     }
     
 }
