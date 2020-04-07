@@ -74,17 +74,38 @@ class ViewController: UITableViewController {
     
     // Checks if the word can be made
     func isPossible(word: String) -> Bool {
+        
+        guard var tempWord = title?.lowercased() else { return false }
+        
+        for letter in word {
+            
+            if let position = tempWord.firstIndex(of: letter) {
+                
+                tempWord.remove(at: position)
+                
+            } else {
+                
+                return false
+                
+            }
+        }
+        
         return true
+        
     }
 
     // Checks if the word is a duplicate
     func isOriginal(word: String) -> Bool {
-        return true
+        
+        return !usedWords.contains(word)
+        
     }
 
     // Check if the word is a valid english word
     func isReal(word: String) -> Bool {
+        
         return true
+        
     }
     
     func submit(_ answer: String) {
